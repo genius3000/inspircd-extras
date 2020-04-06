@@ -1,0 +1,50 @@
+name: macOS CI
+on:
+  push:
+    paths:
+      - '3.0/*'
+  pull_request:
+    paths:
+      - '3.0/*'
+jobs:
+  build:
+    runs-on: macos-latest
+    env:
+      CXXFLAGS: -std=${{ matrix.standard }} -Wno-error=deprecated-declarations
+    steps:
+      - name: Checkout InspIRCd@insp3
+        uses: actions/checkout@v2
+        with:
+          repository: 'inspircd/inspircd'
+          ref: 'insp3'
+          path: 'inspircd'
+      - name: Checkout self
+        uses: actions/checkout@v2
+        with:
+          path: 'contrib'
+      - name: Symlink contrib modules
+        run: |
+          cd inspircd/src/modules
+          ln -s ../../../contrib/3.0/* .
+      - name: Copy our test-build script into place
+        run: cp contrib/tools/test-build inspircd/tools/test-build-contrib
+      - name: Install dependencies
+        run: |
+          brew update
+          brew upgrade
+          brew install pkg-config
+      - name: Check for additional dependencies
+        run: |
+          cd inspircd
+          echo ::set-env name=PACKAGES::$(for f in src/modules/m_*.cpp; do ./tools/directive $f PackageInfo; done)
+      - name: Install additional dependencies
+        if: env.PACKAGES != ''
+        run: brew install ${{ env.PACKAGES }}
+      - name: Run test-build-contrib
+        run: cd inspircd; ./tools/test-build-contrib c++
+    strategy:
+      fail-fast: false
+      matrix:
+        standard:
+          - gnu++98
+          - c++14
