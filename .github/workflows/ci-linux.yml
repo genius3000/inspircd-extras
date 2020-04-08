@@ -41,11 +41,11 @@ jobs:
       - name: Install additional dependencies
         if: env.PACKAGES != ''
         run: sudo apt-get install --assume-yes --no-install-recommends ${{ env.PACKAGES }}
-      - name: Build
+      - name: Build the modules
         run: |
           cd inspircd
           ./configure --development --disable-auto-extras
-          make --jobs $(($(nproc)+1))
+          make --jobs $(($(getconf _NPROCESSORS_ONLN) + 1))
     strategy:
       fail-fast: false
       matrix:
