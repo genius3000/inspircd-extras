@@ -1,0 +1,25 @@
+name: misspell fixer
+on:
+  - push
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Whitelist some directories and files
+      run: |
+        echo "\
+        ^./.github/workflows
+        ^./.mailmap\
+        " > ${{ runner.workspace }}/inspircd-contrib/.misspell-fixer.ignore
+    - uses: sobolevn/misspell-fixer-action@master
+      with:
+        options: '-rvnfuRVD .'
+    - uses: peter-evans/create-pull-request@v2.4.4
+      with:
+        token: ${{ secrets.GITHUB_TOKEN }}
+#        author: 'InspIRCd Robot <noreply@inspircd.org>'
+#        commiter: 'InspIRCd Robot <noreply@inspircd.org>'
+#        commit-message: 'Fixes by misspell-fixer'
+#        title: 'Typos fix by misspell-fixer'
+#        reviewers: 'genius3000'
