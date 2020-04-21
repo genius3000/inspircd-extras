@@ -46,7 +46,7 @@ public:
 				std::vector<std::string> emptyParameters;
 				ServerInstance->CallCommandHandler(command, emptyParameters, user);
 			}
-			/* Calculate how many clients are not psuedo-clients introduced by the Services package */
+			/* Calculate how many clients are not pseudo-clients introduced by the Services package */
 			int ClientsNoServices = 0;
 			for (user_hash::iterator n = ServerInstance->Users->clientlist->begin(); n != ServerInstance->Users->clientlist->end(); ++n)
 			{

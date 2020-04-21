@@ -33,7 +33,7 @@ public:
 		Implementation implementations[] = { I_OnNumeric, I_OnPostConnect, I_OnUserQuit };
 		ServerInstance->Modules->Attach(implementations, this, sizeof(implementations) / sizeof(implementations[0]));
 
-		/* Calculate how many clients are not psuedo-clients introduced by the Services package */
+		/* Calculate how many clients are not pseudo-clients introduced by the Services package */
 		this->clientsNoServices = 0;
 		user_hash::const_iterator curr = ServerInstance->Users->clientlist->begin(), end = ServerInstance->Users->clientlist->end();
 		for (; curr != end; ++curr)

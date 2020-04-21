@@ -18,7 +18,7 @@
 
 /* $ModAuthor: Daniel Vassdal */
 /* $ModAuthorMail: shutter@canternet.org */
-/* $ModDesc: Enables two factor authentification for oper blocks */
+/* $ModDesc: Enables two factor authentication for oper blocks */
 /* $ModDepends: core 2.0 */
 /* $ModConfig: <totp hash="sha256" window="5"> */
 
@@ -303,7 +303,7 @@ class ModuleTOTP : public Module
 
 	Version GetVersion()
 	{
-		return Version("Enables two factor authentification for oper blocks");
+		return Version("Enables two factor authentication for oper blocks");
 	}
 };
 

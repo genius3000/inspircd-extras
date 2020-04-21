@@ -181,7 +181,7 @@ class ModuleBanReason : public Module
 			
 		if(chan->GetExt("ban_reason_" + mask, reason))
 		{
-			Srv->Log(DEBUG, "m_banreason.so: Retreived reason '" + *reason + "' for banmask '" + mask + "' on '" + std::string(chan->name) + "'");
+			Srv->Log(DEBUG, "m_banreason.so: Retrieved reason '" + *reason + "' for banmask '" + mask + "' on '" + std::string(chan->name) + "'");
 			return *reason;
 		}
 		else

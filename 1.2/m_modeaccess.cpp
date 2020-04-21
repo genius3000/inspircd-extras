@@ -200,10 +200,10 @@ class ModuleModeAccess : public Module
 		}
 
 		/**
-		 * Load the configuration for the priveleges required to use a certain mode.
+		 * Load the configuration for the privileges required to use a certain mode.
 		 * If a more than one tag is defined for a mode, then the user only needs
-		 * to have *one* of those priveleges.
-		 * However if more than one privelege is defined inside one tag, all those
+		 * to have *one* of those privileges.
+		 * However if more than one privilege is defined inside one tag, all those
 		 * requirements much be met.
 		 * Prefixes are considered as levels, so if a user has ~ they are considered
 		 * to have &@%+ as well etc.

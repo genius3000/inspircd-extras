@@ -18,7 +18,7 @@
 
 /* $ModAuthor: Daniel Vassdal */
 /* $ModAuthorMail: shutter@canternet.org */
-/* $ModDesc: Enables two factor authentification for oper blocks using authy */
+/* $ModDesc: Enables two factor authentication for oper blocks using authy */
 /* $ModDepends: core 2.0 */
 /* $ModConfig: <authy apikey="" ssl="" graceful="false"> */
 
@@ -137,7 +137,7 @@ class AuthRequest : public BufferedSocket
 
 	void OnError(BufferedSocketError e)
 	{
-		ServerInstance->SNO->WriteToSnoMask('a', "\2WARNING\2: Could not connect to Authy to verify OPER attemt from %s - %s",
+		ServerInstance->SNO->WriteToSnoMask('a', "\2WARNING\2: Could not connect to Authy to verify OPER attempt from %s - %s",
 			AData.username.c_str(), (graceful_failure ? "pretending OTP OK" : "rejected OPER attempt"));
 		if (graceful_failure)
 			ForwardAuthRequest();
@@ -236,7 +236,7 @@ class ModuleAuthy : public Module
 
 	Version GetVersion()
 	{
-		return Version("Enables two factor authentification for oper blocks using Authy");
+		return Version("Enables two factor authentication for oper blocks using Authy");
 	}
 };
 

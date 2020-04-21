@@ -21,7 +21,7 @@ module m_ascii 2.0.287 https://raw.githubusercontent.com/inspircd/inspircd-contr
  depends core 2.0
  conflicts m_nationalchars.so
 module m_authy 2.0.211 https://raw.githubusercontent.com/inspircd/inspircd-contrib/6392bcde7d39a85c8df6a86eb77b218379874570/2.0/m_authy.cpp
- description Enables two factor authentification for oper blocks using authy
+ description Enables two factor authentication for oper blocks using authy
  depends core 2.0
 module m_autodrop 2.0.543 https://raw.githubusercontent.com/inspircd/inspircd-contrib/e69a709889df6821eab30dfc405f7c31d1cfb6f6/2.0/m_autodrop.cpp
  description Allows clients to be automatically dropped if they execute certain commands before registration.
@@ -218,7 +218,7 @@ module m_nouidnick 2.0.195 https://raw.githubusercontent.com/inspircd/inspircd-c
  description Disallows changing nick to UID using /NICK
  depends core 2.0
 module m_opban 2.0.400 https://raw.githubusercontent.com/inspircd/inspircd-contrib/1c050e83bcc8243c34a2618154f521a4b78e27d6/2.0/m_opban.cpp
- description Implements extban +b o: Prevents these persons from aquiring a privileged position
+ description Implements extban +b o: Prevents these persons from acquiring a privileged position
  depends core 2.0
 module m_opmoderated 2.0.479 https://raw.githubusercontent.com/inspircd/inspircd-contrib/9c4d19ed4ee60220b071c57626d888af1c07d61c/2.0/m_opmoderated.cpp
  description Implements channel mode +U and extban 'u' - moderator mute
@@ -307,7 +307,7 @@ module m_topicall 2.0.367 https://raw.githubusercontent.com/inspircd/inspircd-co
  description Provides the /TOPICALL command that changes the topic on all channels
  depends core 2.0
 module m_totp 2.0.211 https://raw.githubusercontent.com/inspircd/inspircd-contrib/866a57af3b4c6a34f19885f1d7f7bf80fbdadbec/2.0/m_totp.cpp
- description Enables two factor authentification for oper blocks
+ description Enables two factor authentication for oper blocks
  depends core 2.0
 module m_whox 2.0.543 https://raw.githubusercontent.com/inspircd/inspircd-contrib/e69a709889df6821eab30dfc405f7c31d1cfb6f6/2.0/m_whox.cpp
  description Provides the WHOX extension.
@@ -487,7 +487,7 @@ module m_timedstaticquit 3.0.496 https://raw.githubusercontent.com/inspircd/insp
  depends core 3
  description Replaces the quit message of a quitting user if they have been connected for less than a configurable time
 module m_totp 3.0.496 https://raw.githubusercontent.com/inspircd/inspircd-contrib/60bebb4d07526f77d44b7eb43ea3fea5f995c113/3.0/m_totp.cpp
- description Enables two factor authentification for oper blocks
+ description Enables two factor authentication for oper blocks
  depends core 3
 module m_xlinetools 3.0.575 https://raw.githubusercontent.com/inspircd/inspircd-contrib/bbbe67eb4148d919c3bd8d8fdeb978f6f9633003/3.0/m_xlinetools.cpp
  depends core 3

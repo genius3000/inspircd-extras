@@ -11,7 +11,7 @@
 
 /* $ModAuthor: Sebastian Nielsen */
 /* $ModAuthorMail: sebastian@sebbe.eu */
-/* $ModDesc: Implements extban +b o: Prevents these persons from aquiring a privileged position */
+/* $ModDesc: Implements extban +b o: Prevents these persons from acquiring a privileged position */
 /* $ModDepends: core 2.0 */
 /* $ModConfig: Optional: <opban requiredrank="50000"> sets required rank to set/unset +b o, defaults to q */
 
@@ -29,7 +29,7 @@ class ModuleOPBan : public Module
 	}
 	Version GetVersion()
 	{
-		return Version("Implements extban +b o: Prevents these persons from aquiring a privileged position",VF_OPTCOMMON);
+		return Version("Implements extban +b o: Prevents these persons from acquiring a privileged position",VF_OPTCOMMON);
 	}
 
 	void OnRehash(User* user)

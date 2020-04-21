@@ -17,7 +17,7 @@
 #include "m_hash.h"
 #include "commands/cmd_privmsg.h"
 
-/* $ModDesc: Allow/Deny connections based upon an arbitary SQL table with extended options. */
+/* $ModDesc: Allow/Deny connections based upon an arbitrary SQL table with extended options. */
 /* $ModDep: m_sqlv2.h m_sqlutils.h m_hash.h */
 /* $ModDepends: core 1.2 */
 
@@ -91,7 +91,7 @@ public:
 
 		databaseid		= Conf.ReadValue("sqlauth_extended", "dbid", 0);				/* Database ID, given to the SQL service provider */
 		freeformquery	= Conf.ReadValue("sqlauth_extended", "query", 0);				/* Field name where username can be found */
-		successquery	= Conf.ReadValue("sqlauth_extended", "successquery", 0);		/* Query to run when a user is registerd and authed ok */
+		successquery	= Conf.ReadValue("sqlauth_extended", "successquery", 0);		/* Query to run when a user is registered and authed ok */
 		failurequery	= Conf.ReadValue("sqlauth_extended", "failurequery", 0);		/* Query to run when a user enters wrong username or password */
 		killreason		= Conf.ReadValue("sqlauth_extended", "killreason", 0);			/* Kill Reason to give when access is denied to a user (put your reg details here) */
 		killreasonUHost	= Conf.ReadValue("sqlauth_extended", "killreasonuhost", 0);		/* Kill Reason to give when user doesn't match allowed user@hostname in SQL $allowedident $allowedhost replaceable */
@@ -328,7 +328,7 @@ public:
 						/* possible ghosting? */
 						if (user->GetExt("wantsnick", wnick)) {
 							/* no need to check ghosting, this is done in OnPreCommand
-							 * and if ghosting is off, user wont have the Extend 
+							 * and if ghosting is off, user won't have the Extend 
 							 */
 							User* InUse = ServerInstance->FindNickOnly(wnick->c_str());
 							if (InUse) {

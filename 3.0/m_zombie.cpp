@@ -97,14 +97,14 @@ class ZombieTimer
 			const already_sent_t newid = ServerInstance->Users.NextAlreadySentId();
 
 			// Handle special users.
-			for (std::map<User*, bool>::const_iterator eiter = exceptions.begin(); eiter != exceptions.end(); ++eiter)
+			for (std::map<User*, bool>::const_iterator either = exceptions.begin(); either != exceptions.end(); ++either)
 			{
-				LocalUser* luser = IS_LOCAL(eiter->first);
+				LocalUser* luser = IS_LOCAL(either->first);
 				if (!luser)
 					continue;
 
 				luser->already_sent = newid;
-				if (eiter->second)
+				if (either->second)
 					neighbors[luser->uuid].push_back((*citer)->chan->name.c_str());
 			}
 

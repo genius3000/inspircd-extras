@@ -25,7 +25,7 @@
 #include <iconv.h>
 #include "modules.h"
 
-/* a record containing incoming and outgoing convertion descriptors and encoding name */
+/* a record containing incoming and outgoing conversion descriptors and encoding name */
 struct io_iconv
     {
     iconv_t in,out;
@@ -377,13 +377,13 @@ class ModuleCodepage : public Module
 		    hash_str::iterator iter=name_hash.find(codepage);
 				
 		    if (iter==name_hash.end()) /* not found, so let's create it */
-		    { /* wrong convertion, assuming default (0) */
+		    { /* wrong conversion, assuming default (0) */
                         if  (((tmpio.in  = iconv_open(icodepage.c_str(), codepage.c_str())) == (iconv_t)-1) ||
                             ((tmpio.out = iconv_open(codepage.c_str(), icodepage.c_str())) == (iconv_t)-1))
                         {
                             ServerInstance->Logs->Log("m_codepage.so",DEFAULT, "WARNING: wrong conversion between %s and %s. Assuming internal codepage!",icodepage.c_str(), codepage.c_str());
                         }
-			else /* right convertion, pushing it into the vector */
+			else /* right conversion, pushing it into the vector */
 			{
 			    tmpio.encoding=codepage;
 			    makeitable(tmpio.in ,tmpio.intable );
@@ -448,7 +448,7 @@ class ModuleCodepage : public Module
 			
 			io_iconv tmpio;
 			
-			/* first we push a record for internal CP for no any convertion to be applied */
+			/* first we push a record for internal CP for no any conversion to be applied */
 			tmpio.encoding=icodepage; 
 			tmpio.in=tmpio.out=(iconv_t)-1;
 			tmpio.intable=tmpio.outtable=NULL;

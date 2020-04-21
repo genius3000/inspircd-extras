@@ -81,9 +81,9 @@ class ModuleEventExec
 	{
 		std::vector<std::string> commands;
 		std::pair<EventMap::iterator, EventMap::iterator> iters = events.equal_range(type);
-		for (EventMap::iterator eiter = iters.first; eiter != iters.second; ++eiter)
+		for (EventMap::iterator either = iters.first; either != iters.second; ++either)
 		{
-			std::string command = eiter->second;
+			std::string command = either->second;
 			ServerInstance->Logs->Log(MODNAME, LOG_DEBUG, "Formatting command: %s", command.c_str());
 
 			size_t variable_start = std::string::npos;
