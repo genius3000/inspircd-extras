@@ -85,7 +85,7 @@ class CommandRMTKL : public Command
 					else
 						matchtypes.push_back(*iter);
 
-					//remove occurences in line
+					//remove occurrences in line
 					matchlinesstr.erase(meetpos,iter->size());
 					if (minus)
 						matchlinesstr.erase(meetpos-1,1);

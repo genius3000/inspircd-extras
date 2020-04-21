@@ -167,7 +167,7 @@ class ModuleXMLSocket : public Module
 		memcpy(tmpbuffer, buffer, count);
 
 		/* XXX: This will actually generate lines "looking\0\0like\0\0this"
-		 * rather than lines "looking\0like\0this". This shouldnt be a problem
+		 * rather than lines "looking\0like\0this". This should not be a problem
 		 * to the client, but it saves us a TON of processing and the need
 		 * to re-implement socket buffering, as the data we are sending is
 		 * exactly the same length as the data we are receiving.

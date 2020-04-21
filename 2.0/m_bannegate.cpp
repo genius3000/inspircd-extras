@@ -39,7 +39,7 @@ class ModuleBanNegate : public Module
 
 	ModResult OnCheckBan(User* source, Channel* chan, const std::string& mask)
 	{
-		// If our matching mask begins with the negate charater, but does not have multiple in a row (to avoid nested loops)
+		// If our matching mask begins with the negate character, but does not have multiple in a row (to avoid nested loops)
 		if (mask.length() > 2 && mask[0] == '~' && mask[1] != '~')
 		{
 			return (chan->CheckBan(source, mask.substr(1)) ? MOD_RES_ALLOW : MOD_RES_DENY);

@@ -1,5 +1,5 @@
 /* m_operperms - Written by Om <omster@gmail.com> - April 2005 */
-/* Updated by Om <omster@gmail.com> - Feburary 2006 */
+/* Updated by Om <omster@gmail.com> - February 2006 */
 
 #include <string>
 #include <set>
